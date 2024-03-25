@@ -18,7 +18,6 @@ body {
   color: white;
   padding: 10px;
   border-radius: 5px;
-  margin: 10px;
 }
 
 .h2texto {
@@ -47,35 +46,40 @@ body {
   margin: 0 15px 15px 0;
 }
 
-.div2flex{
+.div2flex {
   display: flex;
   justify-content: center;
 }
 
-.gatos{
-  color:white;
+.gatos {
+  color: white;
   padding: 2px 15px 20px;
-  margin-bottom:10px;
-  width: 100%;
+  margin-bottom: 10px;
   box-sizing: border-box;
   margin: 10px;
 }
 
-
-img{
-  width: 100%;
- height: 700px;
-object-fit: cover;
+.gatoImg {
+  object-fit: cover;
+  width: 320px;
+  height: 400px;
 }
 
-.cajaCentral{
+.cajaCentral {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 24px;
   text-align: center;
 }
 
-.totalPay{
+.totalPay {
   text-align: center;
+}
 
+.divPadre{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }

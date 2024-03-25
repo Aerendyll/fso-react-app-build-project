@@ -4,7 +4,27 @@ import imagenLimon from "./img/foto-limon.jpg";
 import imagenPlatano from "./img/foto-platano.jpg";
 import imagenSopa from "./img/foto-sopa.jpg";
 import imagenSopaPlatano from "./img/foto-sopaplatano.jpg";
-import Gatos from "./Gatos";
+import Gato from "./Gato";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const gatos = [
+  {
+    nombre: "Sopi",
+    color: "darkmagenta",
+    precio: 50,
+  },
+  {
+    nombre: "Limon",
+    color: "darkolivegreen",
+    precio: 20,
+  },
+  {
+    nombre: "Platano",
+    color: "darkred",
+    precio: 10,
+  },
+];
 
 function App() {
   const [imagen, setImagen] = useState(imagenLimon);
@@ -22,26 +42,9 @@ function App() {
   };
 
   const [total, setTotal] = useState(0);
-  const gatos = [
-    {
-      nombre: "Sopi",
-      color: "darkmagenta",
-      precio: 50,
-    },
-    {
-      nombre: "Limon",
-      color: "darkolivegreen",
-      precio: 20,
-    },
-    {
-      nombre: "Platano",
-      color: "darkred",
-      precio: 10,
-    },
-  ];
 
   return (
-    <>
+    <div className="divPadre">
       <div className="divTitulo">
         <h1 className="titulo">Prueba refuerzo conocimientos </h1>
         <p className="comentario">
@@ -86,29 +89,18 @@ function App() {
         </h2>
         <h2 className="totalPay">Total a pagar : {total} €</h2>
         <div className="cajaCentral">
-          <div >
-          <Gatos
-            nombre={gatos[0].nombre}
-            color={gatos[0].color}
-            precio={gatos[0].precio}
-            setTotal={setTotal}
-          />
-          <Gatos
-            nombre={gatos[1].nombre}
-            color={gatos[1].color}
-            precio={gatos[1].precio}
-            setTotal={setTotal}
-          />
-          <Gatos
-            nombre={gatos[2].nombre}
-            color={gatos[2].color}
-            precio={gatos[2].precio}
-            setTotal={setTotal}
-          />
+          {gatos.map((gate) => (
+            <Gato
+              nombre={gate.nombre}
+              color={gate.color}
+              precio={gate.precio}
+              setTotal={setTotal}
+            />
+          ))}
+          <ToastContainer />
         </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 }
 
