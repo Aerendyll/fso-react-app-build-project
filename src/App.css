@@ -95,3 +95,14 @@ body {
  padding: 4px;
  border: 5px ridge orange
 }
+
+.divPadreCourse{
+  align-content: center;
+  justify-content: center;
+
+}
+
+.contenedorAsignaturas{
+  display: flex;
+  justify-content: center;
+}

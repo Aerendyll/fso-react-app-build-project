@@ -5,6 +5,7 @@ import ImagenesEstaticas from "./components/ImagenesEstaticas";
 import CambioImagen from "./components/CambioImagen";
 import SeccionGatos from "./components/SeccionGatos";
 import PersonArray from "./components/PersonArray";
+import Course from "./components/Course";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
           <li className="liPt3">Obtención de datos mediante API</li>
         </h2>
         <PersonArray />
+        <Course />
       </div>
     </div>
   );
