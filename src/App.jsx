@@ -1,49 +1,12 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import imagenLimon from "./img/foto-limon.jpg";
-import imagenPlatano from "./img/foto-platano.jpg";
-import imagenSopa from "./img/foto-sopa.jpg";
-import imagenSopaPlatano from "./img/foto-sopaplatano.jpg";
-import Gato from "./Gato";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import ImagenesEstaticas from "./components/ImagenesEstaticas";
+import CambioImagen from "./components/CambioImagen";
+import SeccionGatos from "./components/SeccionGatos";
 import PersonArray from "./components/PersonArray";
 
-const gatos = [
-  {
-    nombre: "Sopi",
-    color: "darkmagenta",
-    precio: 50,
-  },
-  {
-    nombre: "Limon",
-    color: "darkolivegreen",
-    precio: 20,
-  },
-  {
-    nombre: "Platano",
-    color: "darkred",
-    precio: 10,
-  },
-];
-
-function App() {
-  const [imagen, setImagen] = useState(imagenLimon);
-
-  const cambiarImagen = () => {
-    if (imagen === imagenLimon) {
-      setImagen(imagenPlatano);
-    } else if (imagen === imagenPlatano) {
-      setImagen(imagenSopa);
-    } else if (imagen === imagenSopa) {
-      setImagen(imagenSopaPlatano);
-    } else {
-      setImagen(imagenLimon);
-    }
-  };
-
-  const [total, setTotal] = useState(0);
-
+const App = () => {
   return (
     <div className="divPadre">
       <div className="divTitulo">
@@ -53,56 +16,16 @@ function App() {
           conocimientos que he ido adquiriendo sobre React por el momento.
         </p>
       </div>
-      <div className="div1">
-        <h2 className="h2texto">
-          Este apartado va a consistir en 4 imágenes estáticas que mediante flex
-          van a aprovechar el espacio total de su div y reorganizarse
-          automáticamente.
-        </h2>
-        <div className="imgContainer">
-          <img className="imgDiv1" src={imagenLimon} alt="limo" />
-          <img className="imgDiv1" src={imagenPlatano} alt="plata" />
-          <img className="imgDiv1" src={imagenSopa} alt="sopa" />
-          <img className="imgDiv1" src={imagenSopaPlatano} alt="sopaplatano" />
-        </div>
-      </div>
-      <div className="div1">
-        <h2 className="h2texto">
-          En este apartado va a haber una única imagen que al pulsar en ella se
-          va a ver actualizada y va a cambiar a otra foto con un useState.
-        </h2>
-        <div className="div2flex">
-          <div className="cambiarImagen">
-            <img
-              onClick={cambiarImagen}
-              className="imgDiv2"
-              src={imagen}
-              alt="foto"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="div1">
-        <h2 className="h2texto">
-          En este apartado habrán 3 imágenes y cada 1 al hacerle click en su
-          botón se esconderán respectivamente y sumarán el precio a un contador
-          llamado Total.
-        </h2>
-        <h2 className="totalPay">Total a pagar : {total} €</h2>
-        <div className="cajaCentral">
-          {gatos.map((gate, index) => (
-            <Gato
-              key={index}
-              nombre={gate.nombre}
-              color={gate.color}
-              precio={gate.precio}
-              setTotal={setTotal}
-            />
-          ))}
-          <ToastContainer />
-        </div>
-      </div>
-
+      <ImagenesEstaticas
+        imagenes={[
+          "./src/img/foto-limon.jpg",
+          "./src/img/foto-platano.jpg",
+          "./src/img/foto-sopa.jpg",
+          "./src/img/foto-sopaplatano.jpg",
+        ]}
+      />
+      <CambioImagen />
+      <SeccionGatos />
       <div className="div1">
         <h2 className="h2texto">
           A partir de este apartado vamos a implementar en conjunto todo lo dado
@@ -110,17 +33,17 @@ function App() {
           <br /> <br />
           De hecho lo que quiero conseguir a partir de este apartado va a ser lo
           siguiente, una App que contenga:
-         <li className="liPt3">Componentes</li>
-         <li className="liPt3">Obtención de datos mediante back-end (propio)</li>
-         <li className="liPt3">Filtrado de datos</li>
-         <li className="liPt3">Mostrar datos extra (si condiciones)</li>
-         <li className="liPt3">Añadir y borrar datos alojados en el servidor</li>
-         <li className="liPt3">Obtención de datos mediante API</li>
+          <li className="liPt3">Componentes</li>
+          <li className="liPt3">Obtención de datos mediante back-end (propio)</li>
+          <li className="liPt3">Filtrado de datos</li>
+          <li className="liPt3">Mostrar datos extra (si condiciones)</li>
+          <li className="liPt3">Añadir y borrar datos alojados en el servidor</li>
+          <li className="liPt3">Obtención de datos mediante API</li>
         </h2>
         <PersonArray />
       </div>
     </div>
   );
-}
+};
 
 export default App;

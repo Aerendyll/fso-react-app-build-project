@@ -1,8 +1,9 @@
+
 import React from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const OPTIONS = {
+const OPTIONS = {
   position: "top-center",
   autoClose: 5000,
   hideProgressBar: false,
@@ -12,14 +13,14 @@ export const OPTIONS = {
   progress: undefined,
   theme: "colored",
 };
-function Gato({ nombre, color, precio, setTotal }) {
+
+const Gato = ({ nombre, color, precio, setTotal }) => {
   const ruta = "./src/img/foto_";
   const imagen = `${ruta}${nombre.toLowerCase()}.jpg`;
 
   const comprar = (elemento) => {
     setTotal((e) => e + precio);
     elemento.target.parentNode.parentNode.parentNode.style.display = "none";
-    // toast.info(`noo compraste a ${nombre} por la friolera de ${precio} euros`, OPTIONS);
     toast.info(`noo compraste a ${nombre} por la friolera de ${precio} euros`, OPTIONS);
   };
 
@@ -27,7 +28,7 @@ function Gato({ nombre, color, precio, setTotal }) {
     <>
       <div className="gatos" style={{ backgroundColor: color }}>
         <h2>{nombre}</h2>
-        <img className="gatoImg" src={imagen} />
+        <img className="gatoImg" src={imagen} alt={nombre} />
         <div className="titulo">Precio</div>
         <div className="precio">
           {precio}€
@@ -38,6 +39,6 @@ function Gato({ nombre, color, precio, setTotal }) {
       </div>
     </>
   );
-}
+};
 
 export default Gato;
