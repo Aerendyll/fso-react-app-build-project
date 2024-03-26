@@ -7,6 +7,7 @@ import imagenSopaPlatano from "./img/foto-sopaplatano.jpg";
 import Gato from "./Gato";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PersonArray from "./components/PersonArray";
 
 const gatos = [
   {
@@ -89,8 +90,9 @@ function App() {
         </h2>
         <h2 className="totalPay">Total a pagar : {total} €</h2>
         <div className="cajaCentral">
-          {gatos.map((gate) => (
+          {gatos.map((gate, index) => (
             <Gato
+              key={index}
               nombre={gate.nombre}
               color={gate.color}
               precio={gate.precio}
@@ -99,6 +101,23 @@ function App() {
           ))}
           <ToastContainer />
         </div>
+      </div>
+
+      <div className="div1">
+        <h2 className="h2texto">
+          A partir de este apartado vamos a implementar en conjunto todo lo dado
+          en la parte 2 de FSO ➡️ componentes, servicios y backend con APIs{" "}
+          <br /> <br />
+          De hecho lo que quiero conseguir a partir de este apartado va a ser lo
+          siguiente, una App que contenga:
+         <li className="liPt3">Componentes</li>
+         <li className="liPt3">Obtención de datos mediante back-end (propio)</li>
+         <li className="liPt3">Filtrado de datos</li>
+         <li className="liPt3">Mostrar datos extra (si condiciones)</li>
+         <li className="liPt3">Añadir y borrar datos alojados en el servidor</li>
+         <li className="liPt3">Obtención de datos mediante API</li>
+        </h2>
+        <PersonArray />
       </div>
     </div>
   );

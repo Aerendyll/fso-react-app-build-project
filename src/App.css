@@ -83,3 +83,15 @@ body {
   flex-direction: column;
   gap: 24px;
 }
+
+.personArr{
+  border: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.liPt3{
+ padding: 4px;
+ border: 5px ridge orange
+}
