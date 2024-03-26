@@ -1,12 +1,8 @@
-
 import { useState } from "react";
 import React from "react";
 import Gato from "../Gato";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
-
 
 const gatos = [
   {
@@ -28,11 +24,15 @@ const gatos = [
 
 const SeccionGatos = () => {
   const [total, setTotal] = useState(0);
-  
-  const resetBtn = () =>{
-    setTotal(0)
-    
-  }
+
+  const resetBtn = () => {
+    setTotal(0);
+    const gatosElements = document.getElementsByClassName("gatos");
+    for (let i = 0; i < gatosElements.length; i++) {
+      gatosElements[i].style.display = "block";
+    }
+  };
+
   return (
     <div className="div1">
       <h2 className="h2texto">
@@ -40,10 +40,18 @@ const SeccionGatos = () => {
         botón se esconderán respectivamente y sumarán el precio a un contador
         llamado Total.
       </h2>
-      <h2 className="totalPay">Total a pagar : {total} € <button onClick={resetBtn}> Reset </button></h2> 
+      <h2 className="totalPay">
+        Total a pagar : {total} € <button onClick={resetBtn}> Reset </button>
+      </h2>
       <div className="cajaCentral">
         {gatos.map((gato, index) => (
-          <Gato key={index} nombre={gato.nombre} color={gato.color} precio={gato.precio} setTotal={setTotal} />
+          <Gato
+            key={index}
+            nombre={gato.nombre}
+            color={gato.color}
+            precio={gato.precio}
+            setTotal={setTotal}
+          />
         ))}
         <ToastContainer />
       </div>
