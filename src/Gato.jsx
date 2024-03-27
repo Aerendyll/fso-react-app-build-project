@@ -1,8 +1,6 @@
-
 import React from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 const OPTIONS = {
   position: "top-center",
@@ -22,7 +20,10 @@ const Gato = ({ nombre, color, precio, setTotal }) => {
   const comprar = (elemento) => {
     setTotal((e) => e + precio);
     elemento.target.parentNode.parentNode.parentNode.style.display = "none";
-    toast.info(`noo compraste a ${nombre} por la friolera de ${precio} euros`, OPTIONS);
+    toast.info(
+      `noo😭😭 compraste a ${nombre} por la friolera de ${precio} euros💀💀 `,
+      OPTIONS
+    );
   };
 
   return (

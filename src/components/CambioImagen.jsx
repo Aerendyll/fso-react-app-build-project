@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import imagenLimon from "../img/foto-limon.jpg";
 import imagenPlatano from "../img/foto-platano.jpg";
@@ -23,12 +22,17 @@ const CambioImagen = () => {
   return (
     <div className="div1">
       <h2 className="h2texto">
-        En este apartado va a haber una única imagen que al pulsar en ella se
-        va a ver actualizada y va a cambiar a otra foto con un useState.
+        En este apartado va a haber una única imagen que al pulsar en ella se va
+        a ver actualizada y va a cambiar a otra foto con un useState.
       </h2>
       <div className="div2flex">
         <div className="cambiarImagen">
-          <img onClick={cambiarImagen} className="imgDiv2" src={imagen} alt="foto" />
+          <img
+            onClick={cambiarImagen}
+            className="imgDiv2"
+            src={imagen}
+            alt="foto"
+          />
         </div>
       </div>
     </div>

@@ -36,12 +36,16 @@ const SeccionGatos = () => {
   return (
     <div className="div1">
       <h2 className="h2texto">
-        En este apartado habrán 3 imágenes y cada 1 al hacerle click en su
-        botón se esconderán respectivamente y sumarán el precio a un contador
-        llamado Total.
+        En este apartado habrán 3 imágenes y cada 1 al hacerle click en su botón
+        se esconderán respectivamente y sumarán el precio a un contador llamado
+        Total.
       </h2>
       <h2 className="totalPay">
-        Total a pagar : {total} € <button onClick={resetBtn}> Reset </button>
+        Total a pagar : {total} €{" "}
+        <button className="rstBtn" onClick={resetBtn}>
+          {" "}
+          Reset{" "}
+        </button>
       </h2>
       <div className="cajaCentral">
         {gatos.map((gato, index) => (

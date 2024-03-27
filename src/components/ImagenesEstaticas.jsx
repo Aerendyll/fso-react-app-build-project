@@ -11,7 +11,12 @@ const ImagenesEstaticas = ({ imagenes }) => {
       </h2>
       <div className="imgContainer">
         {imagenes.map((imagen, index) => (
-          <img key={index} className="imgDiv1" src={imagen} alt={`imagen-${index}`} />
+          <img
+            key={index}
+            className="imgDiv1"
+            src={imagen}
+            alt={`imagen-${index}`}
+          />
         ))}
       </div>
     </div>

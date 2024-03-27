@@ -1,5 +1,8 @@
 body {
-  background-color: rgb(148, 108, 47);
+  background-image: url("./img/layered-peaks-haikei.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .divTitulo {
@@ -24,6 +27,7 @@ body {
   font-size: 15px;
   text-align: center;
   margin: 10px;
+  gap: 10px;
 }
 .imgDiv1 {
   width: 275px;
@@ -78,31 +82,66 @@ body {
   text-align: center;
 }
 
-.divPadre{
+.divPadre {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.personArr{
-  border: 3px solid #000;
+.personLi {
+  padding-right: 25px;
+}
+
+.personArrP {
+  display: flex;
+  justify-content: center;
+}
+.personArr {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.liPt3{
- padding: 4px;
- border: 5px ridge orange
+.liPt3 {
+  padding: 4px;
+  border: 5px ridge orange;
+  background-color: thistle;
+  margin-bottom: 10px;
 }
 
-.divPadreCourse{
+.divPadreCourse {
   align-content: center;
   justify-content: center;
-
 }
 
-.contenedorAsignaturas{
+.contenedorAsignaturas {
   display: flex;
   justify-content: center;
+}
+
+.rstBtn {
+  font-size: 30px;
+  margin-top: 10px;
+  background-color: antiquewhite;
+}
+
+.personH1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.personForm {
+  display: flex;
+  justify-content: center;
+}
+
+.personsContainer {
+  justify-content: center;
+  display: flex;
+}
+
+
+.courseBtn{
+  margin-right: 5px;
 }

@@ -115,8 +115,10 @@ const Course = () => {
               onChange={(e) => setNewExercise0(e.target.value)}
               placeholder="Nuevos ejercicios"
             />
-            <button type="submit">Añadir asignatura y ejercicios</button>
           </form>
+          <button className="courseBtn" type="submit">
+            Añadir asignatura y ejercicios
+          </button>
           <button onClick={toggleAsignaturas}>
             {" "}
             {toggleBtn ? "Esconder" : "Mostrar"} asignaturas lógicas
@@ -152,8 +154,10 @@ const Course = () => {
               onChange={(e) => setNewExercise1(e.target.value)}
               placeholder="Nuevos ejercicios"
             />
-            <button type="submit">Añadir asignatura y ejercicios</button>
           </form>
+          <button className="courseBtn" type="submit">
+            Añadir asignatura y ejercicios
+          </button>
           <button onClick={toggleAsignaturas1}>
             {toggleBtn1 ? "Esconder" : "Mostrar"} asignaturas de estudio
           </button>
@@ -174,7 +178,6 @@ const Course = () => {
               </p>
             </>
           )}
-
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import CambioImagen from "./components/CambioImagen";
 import SeccionGatos from "./components/SeccionGatos";
 import PersonArray from "./components/PersonArray";
 import Course from "./components/Course";
+import Persons from "./components/Persons";
 
 const App = () => {
   return (
@@ -30,10 +31,11 @@ const App = () => {
       <div className="div1">
         <h2 className="h2texto">
           A partir de este apartado vamos a implementar en conjunto todo lo dado
-          en la parte 2 de FSO ➡️ componentes, servicios y backend con APIs{" "}
+          en la parte 2 de FSO ➡️ componentes, servicios y backend con APIs
           <br /> <br />
           De hecho lo que quiero conseguir a partir de este apartado va a ser lo
           siguiente, una App que contenga:
+          <br/>  <br/>
           <li className="liPt3">Componentes</li>
           <li className="liPt3">Obtención de datos mediante back-end (propio)</li>
           <li className="liPt3">Filtrado de datos</li>
@@ -43,6 +45,7 @@ const App = () => {
         </h2>
         <PersonArray />
         <Course />
+        <Persons/>
       </div>
     </div>
   );
