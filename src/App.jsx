@@ -7,6 +7,7 @@ import SeccionGatos from "./components/SeccionGatos";
 import PersonArray from "./components/PersonArray";
 import Course from "./components/Course";
 import Persons from "./components/Persons";
+import ComponentePais from "./components/ComponentePais";
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
         <PersonArray />
         <Course />
         <Persons/>
+        <ComponentePais/>
       </div>
     </div>
   );

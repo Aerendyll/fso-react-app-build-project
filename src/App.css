@@ -63,6 +63,10 @@ body {
   margin: 10px;
 }
 
+button{
+  cursor: pointer;
+}
+
 .gatoImg {
   object-fit: cover;
   width: 320px;
@@ -123,6 +127,7 @@ body {
   font-size: 30px;
   margin-top: 10px;
   background-color: antiquewhite;
+  cursor: pointer;
 }
 
 .personH1 {
@@ -144,4 +149,42 @@ body {
 
 .courseBtn{
   margin-right: 5px;
+  cursor: pointer;
+}
+
+.ulCountry{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas de tamaño automático con un mínimo de 200px */
+  grid-gap: 10px; /* Espacio entre elementos */
+}
+.liCountry{
+  margin-right: 10px; /* Espacio entre elementos */
+  margin-bottom: 10px; 
+}
+
+.h1Pais{
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+.btnPais{
+  font-size: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.divPais{
+ 
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.inputPais{
+  display: block;
+  margin: 0 auto; /* Esto centra horizontalmente */
+  font-size: 24px;
 }

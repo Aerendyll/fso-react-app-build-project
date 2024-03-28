@@ -1,17 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import personServices from "../services/personServices";
 
 const Notes = () => {
+  const urlNotes = "http://localhost:3001/persons";
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
-  const urlNotes = "http://localhost:3001/persons";
   const [showList, setShowList] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(urlNotes)
+    personServices
+      .getAll()
       .then((response) => {
         setPersons(response.data);
       })
@@ -21,11 +22,18 @@ const Notes = () => {
   }, []);
 
   const handleNameChange = (event) => {
-    setNewName(event.target.value);
+    const inputValue = event.target.value;
+    if (/^[a-zA-Z\s]*$/.test(inputValue)) {
+      setNewName(inputValue);
+    }
   };
 
   const handleNumberChange = (event) => {
-    setNewNumber(event.target.value);
+    const inputValue = event.target.value;
+    // Verificar si el valor ingresado contiene solo números
+    if (/^[0-9]*$/.test(inputValue)) {
+      setNewNumber(inputValue);
+    }
   };
   const addPersons = (event) => {
     event.preventDefault();
@@ -45,11 +53,13 @@ const Notes = () => {
         console.log("Error adding person", error);
       });
   };
+  
 
   const changeListVisibility = () => {
     setShowList(!showList);
   };
 
+ 
   return (
     <>
       <h1 className="personH1">
@@ -61,25 +71,29 @@ const Notes = () => {
             Nombre: <input value={newName} onChange={handleNameChange} />
           </div>
           <div>
-            Número: <input value={newNumber} onChange={handleNumberChange} />
+            Número:{" "}
+            <input
+              type="text"
+              value={newNumber}
+              onChange={handleNumberChange}
+            />
           </div>
-          <button type="submit">Añadir Persona</button> <br />
+          <button  type="submit">Añadir Persona</button> <br />
           <button type="button" onClick={changeListVisibility}>
             Mostrar lista
           </button>
         </form>
       </div>
-
       {showList && (
-        <container className="personsContainer">
+        <div className="personsContainer">
           <ul>
             {persons.map((person, index) => (
               <li key={index}>
-                {person.name} - {person.number}
+                {person.name} - {person.number}  
               </li>
             ))}
           </ul>
-        </container>
+        </div>
       )}
     </>
   );
