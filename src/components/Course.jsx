@@ -116,7 +116,7 @@ const Course = () => {
               placeholder="Nuevos ejercicios"
             />
           </form>
-          <button className="courseBtn" type="submit">
+          <button className="courseBtn" type="submit" onClick={addNotes0}>
             Añadir asignatura y ejercicios
           </button>
           <button onClick={toggleAsignaturas}>
@@ -155,7 +155,7 @@ const Course = () => {
               placeholder="Nuevos ejercicios"
             />
           </form>
-          <button className="courseBtn" type="submit">
+          <button className="courseBtn" type="submit" onClick={addNotes1}>
             Añadir asignatura y ejercicios
           </button>
           <button onClick={toggleAsignaturas1}>
@@ -173,7 +173,7 @@ const Course = () => {
               <p>
                 Total de ejercicios{" "}
                 {courses[1].parts.reduce((sum, valor) => {
-                  return sum + valor.exercises;
+                  return sum + valor.exercises; 
                 }, 0)}
               </p>
             </>

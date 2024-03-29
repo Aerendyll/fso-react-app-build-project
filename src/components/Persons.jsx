@@ -4,7 +4,7 @@ import axios from "axios";
 import personServices from "../services/personServices";
 
 const Notes = () => {
-  const urlNotes = "http://localhost:3001/persons";
+  const urlNotes = "http://localhost:3001/persons/";
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
@@ -40,7 +40,7 @@ const Notes = () => {
     const personObject = {
       name: newName,
       number: newNumber,
-      id: persons.length + 1,
+      id: (persons.length + 1).toString()
     };
     axios
       .post(urlNotes, personObject)
@@ -54,11 +54,22 @@ const Notes = () => {
       });
   };
   
+  
 
   const changeListVisibility = () => {
     setShowList(!showList);
   };
-
+  
+  const deletePerson = (id) => {
+    axios.delete(`${urlNotes}${id}`)
+      .then(() => {
+        const updatedPersons = persons.filter(person => person.id !== id);
+        setPersons(updatedPersons);
+      })
+      .catch((error) => {
+        console.log("Error deleting person", error);
+      });
+  };
  
   return (
     <>
@@ -89,7 +100,7 @@ const Notes = () => {
           <ul>
             {persons.map((person, index) => (
               <li key={index}>
-                {person.name} - {person.number}  
+                {person.name} - {person.number}  <button onClick={() => deletePerson(person.id)}>borrar</button>
               </li>
             ))}
           </ul>
